@@ -130,6 +130,9 @@ print(getIntersection([1,2,3,4,5],[0, 2, 4, 6, 8]))
 // once i have looped through my array i will add to my intersection
 
 /*
+```
+
+```
 **3. Write a function that accepts a string that contains all the letters of the alphabet except one and returns the missing letter.**
 
 ex. - The string "the quick brown ox jumps over a lazy dog" contains all the letters in the alphabet except the letter "f".
@@ -196,6 +199,7 @@ print(getMissingLetter(in: "the quick brown ox jumps over a lazy dog"))
 //         return  ans
 //     }
 
+```
 // Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
 
 // input - string ,lowercase
