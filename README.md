@@ -150,3 +150,105 @@ func getMissingLetter(in string: String) -> String {
 }
 print(getMissingLetter(in: "the quick brown ox jumps over a lazy dog"))
 ```
+
+
+```
+//I want to use a dictionary that will keep track of both the number AND the index where the number is found.
+//var numbersSeenDict: [Int: Int] = [2: 0, 8: 1, 11: 2, 15: 3]
+
+// func twoSumVersion2(nums: [Int], target: Int) -> [Int] {
+//   var numberSeen = Set<Int>()
+
+//   for currentNumber in nums {
+//     if numberSeen.contains(target - currentNumber) {
+//       // print(currentNumber, target - currentNumber)
+//     } else {
+//       numberSeen.insert(currentNumber)
+//     }
+//   }
+//   return [Int]()
+// }
+// func twoSumVersion1(nums: [Int], target: Int) -> [Int] {
+  
+//   //Big O Notation = O(n^2) -> Quadratic runtime
+//   for numberPointerOne in nums {
+//     for numberPointerTwo in nums {
+//       if numberPointerOne + numberPointerTwo == target {
+//         return [numberPointerOne, numberPointerTwo]
+//       }
+//     }
+//   }
+//   return [Int]()
+// }
+
+
+//     func lengthOfLongestSubstring(_ s: String) -> Int {
+//         var charDic = [Character:Int]()
+//         var chars = Array(s)
+//         var i = 0 , ans = 0
+//         for  j in  0..<s.count {
+//             if let index = charDic[chars[j]]{
+//                 i = max(index, i)
+//             }
+//             ans = max(ans, j-i+1)
+//             charDic[chars[j]] = j+1
+//         }
+//         return  ans
+//     }
+
+// Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+
+// input - string ,lowercase
+// output - boolean true - all unique characters false- no unique characters
+//example: bcd
+// output : true
+
+//example: aaabcca
+// output: false
+
+
+// edge cases - 
+
+// constraints - 
+
+var inputFalse = "d"
+
+//["d" : true, "u" : true, "z" : true]
+//keys have to be unique 
+// == -> one of the comparion operators -> equal to
+// = -> assignment operator
+
+func isUniqueCharacters(_ string :String) -> Bool {
+var dict = [Character: Int]()
+
+//check the length of the string, return if less than 2
+    //if string.count < 1 { return true }
+    guard string.count > 1 else { return true }
+
+// 1. loop through my string of characters
+for char in string {
+  if let _ = dict[char] {
+    return false
+  }
+  else {
+    dict[char] = 1
+  }
+}
+
+// all characters are unique
+return true
+}
+
+print(isUniqueCharacters(inputFalse))
+
+//function to generate sample input strings
+func randomString(length: Int) -> String {
+  let letters = "abcdefghijklmnopqrstuvwxyz"
+  return String((0..<length).map{ _ in letters.randomElement()! })
+}
+var input = randomString(length: 10)
+
+
+
+print(input)
+```
