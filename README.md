@@ -1,4 +1,32 @@
 # DSA-Problems
+
+**Greatest Number**
+```
+func greatestNumber(_ arr: [Int]) -> Int {
+  var result = 0
+
+  for num in arr {
+    if num > result {
+      result = num 
+    }
+  }
+  return result
+}
+
+print(greatestNumber([4, 2, 7, 1, 3]))
+
+//O(n)
+
+// 1st loop - num = 4, result = 0
+// 2nd loop - num = 2, result = 4
+// 3rd loop - num = 7, result = 4
+// 4th loop - num = 1, result = 7
+// 5th loop - num = 3, result = 7
+
+```
+
+
+
 ```
 **get intersection**
 
