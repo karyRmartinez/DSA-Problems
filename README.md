@@ -31,3 +31,47 @@ func getIntersection(from array1: [Int], and array2: [Int]) {
 }
 
 getIntersection(from: inputA, and: inputB)
+
+
+
+
+/* 
+Given a string str, a duplicate removal consists of choosing two adjacent and equal letters, and removing them.
+
+We repeatedly make duplicate removals on S until we no longer can.
+
+Return the final string after all such duplicate removals have been made. It is guaranteed the answer is unique.
+
+let input = "bookkeeper"
+=> "bper"
+
+let input = "abbaca"
+=> "ca"
+-> "abbaca" -> "aaca" -> "ca"
+
+*/
+
+// loop through the string 
+// look duplictes
+// remove all duplicate until I find no duplicates
+// "abbaca"
+// ['c']
+
+func removeDuplicates(str: String) -> String {
+  var stack = [Characters]()
+
+  for letter in str == 0 {
+    letter.remove
+    if (stack.last == letter) {
+      stack.removeLast()
+    }
+    if stack.isEmpty {
+      stack.append(letter)
+    }
+    if stack.last =! letter {
+      stack.append(letter)
+    }
+  }
+
+  return 
+}
