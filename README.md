@@ -34,7 +34,7 @@ getIntersection(from: inputA, and: inputB)
 
 
 ```
-
+```
 /* 
 **Given a string str, a duplicate removal consists of choosing two adjacent and equal letters, and removing them.**
 
@@ -75,7 +75,7 @@ func removeDuplicates(str: String) -> String {
 
   return 
 }
-
+```
 
 
 
