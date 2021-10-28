@@ -258,3 +258,35 @@ var input = randomString(length: 10)
 
 print(input)
 ```
+
+**Bubble Sort**
+```
+func bubbleSort(_ array: inout [Int]) -> [Int] {
+   var sorted = false
+   var swaps = 0
+
+   while !sorted {
+     sorted = true
+     for currentIndex in 1..<array.count {
+       if array[currentIndex - 1] > array[currentIndex] {
+         let temp = array[currentIndex - 1]
+         array[currentIndex - 1 ] = array[currentIndex]
+         array[currentIndex] = temp
+         sorted = false
+         swaps += 1
+       }
+     }
+   }
+//Array is sorted in \(numSwaps) swaps., where  is the number of swaps that took place.
+print("Array is sorted in \(swaps) swaps.")
+//First Element: firstElement, where  is the first element in the sorted array.
+print("First Element: \(array.first!)")
+//Last Element: lastElement, where  is the last element in the sorted array.
+print("Last Element: \(array.last!)")
+return array
+
+}
+
+var input = [6, 4, 1]
+print(bubbleSort(&input))
+```
