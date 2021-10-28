@@ -1,5 +1,5 @@
 # DSA-Problems
-'''
+```
 **get intersection**
 
 let inputA = [1,2,3,4,5];
@@ -33,7 +33,7 @@ func getIntersection(from array1: [Int], and array2: [Int]) {
 getIntersection(from: inputA, and: inputB)
 
 
-'''
+```
 
 /* 
 **Given a string str, a duplicate removal consists of choosing two adjacent and equal letters, and removing them.**
@@ -80,7 +80,7 @@ func removeDuplicates(str: String) -> String {
 
 
 
-'''
+```
 
 /*
 **1. Write a function that returns the intersection of two array. The intersection is a third array that contains all values contained within the first two arrays.**
@@ -149,4 +149,4 @@ func getMissingLetter(in string: String) -> String {
  
 }
 print(getMissingLetter(in: "the quick brown ox jumps over a lazy dog"))
-'''
+```
