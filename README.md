@@ -344,3 +344,25 @@ print(bubbleSort(&input))
         return startIndex
     }
 ```
+
+```
+**
+//Given a string, return the first recurring character in that string. If there's no recurring character, return a "_"
+//Input 1: ABCA -> A
+//Input 2: BCABA -> B
+//Input 3: ABCDE -> _**
+
+func findRecurringCharacterVersion2(str: String) -> Character {
+  var charsSeen = Set<Character>()
+
+  for currentChar in str {
+    if charsSeen.contains(currentChar) {
+      return currentChar
+    } else {
+      charsSeen.insert(currentChar)
+    }
+  }
+  return "_"
+}
+
+print("Linear Approach: \(findRecurringCharacterVersion2(str: inputString))")
