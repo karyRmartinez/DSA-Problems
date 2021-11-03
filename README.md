@@ -318,3 +318,25 @@ return array
 var input = [6, 4, 1]
 print(bubbleSort(&input))
 ```
+
+
+    func peakIndexInMountainArray(_ arr: [Int]) -> Int {
+            guard arr.count >= 3 else{
+            return -1
+        }
+
+        var startIndex = 0
+        var endIndex = arr.count - 1
+
+        while startIndex <= endIndex{
+            let midIndex = startIndex + (endIndex - startIndex) / 2
+
+            if arr[midIndex] < arr[midIndex + 1]{
+                startIndex += 1
+            } else{
+                endIndex -= 1
+            }
+        }
+
+        return startIndex
+    }
