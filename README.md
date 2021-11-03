@@ -369,6 +369,7 @@ print("Linear Approach: \(findRecurringCharacterVersion2(str: inputString))")
 
 ```
 ```
+Lemonade stand
 **// each lemonade cost $5
 // each customer pays with 5,10,20
 // return bool
