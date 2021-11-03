@@ -346,8 +346,8 @@ print(bubbleSort(&input))
 ```
 
 ```
-**
-//Given a string, return the first recurring character in that string. If there's no recurring character, return a "_"
+
+**Given a string, return the first recurring character in that string If there's no recurring character, return a "_"
 //Input 1: ABCA -> A
 //Input 2: BCABA -> B
 //Input 3: ABCDE -> _**
@@ -366,3 +366,45 @@ func findRecurringCharacterVersion2(str: String) -> Character {
 }
 
 print("Linear Approach: \(findRecurringCharacterVersion2(str: inputString))")
+
+```
+**lemonade stand**
+
+// each lemonade cost $5
+// each customer pays with 5,10,20
+// return bool
+
+//example: 5, 10, 20 -> true
+ // if two customers give 10 one after another no change
+ // bank starts at 0 
+ 
+ func(arr: [Int])-> Bool {
+  var bankFive = 0
+  var bankTen = 0
+  var bankTwenty = 0
+  for bill in arr { //
+    if bill == 5 {
+      bankFive += 1
+    } else if bill == 10 {
+      bankTen += 1
+      bankFive -= 1 
+    }else if bill == 20 {
+      bankTwenty += 1
+      if bankTen > 0 {
+        bankTen -= 1
+        bankFive -= 1
+      } else {
+         bankFive -= 3
+      }
+
+    }else{
+      return false
+    }
+  }
+  if bankFive > 0 {
+    return true
+  }else {
+    return false
+  }
+ }
+```
