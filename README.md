@@ -368,15 +368,15 @@ func findRecurringCharacterVersion2(str: String) -> Character {
 print("Linear Approach: \(findRecurringCharacterVersion2(str: inputString))")
 
 ```
-**lemonade stand**
-
-// each lemonade cost $5
+```
+**// each lemonade cost $5
 // each customer pays with 5,10,20
 // return bool
 
 //example: 5, 10, 20 -> true
  // if two customers give 10 one after another no change
- // bank starts at 0 
+ // bank starts at 0**
+ 
  
  func(arr: [Int])-> Bool {
   var bankFive = 0
