@@ -409,3 +409,112 @@ Lemonade stand
   }
  }
 ```
+
+
+
+
+1. Factorial - the product of all positive integers less than or equal to a given positive integer and denoted by that integer and an exclamation point.
+
+Given an integer, n, write a function that produces it's factorial value.
+
+Example 1:
+  Input: n = 3
+  Output: 6
+  Explanation: 3 * 2 * 1 = 6
+  
+Example 2:
+  Input: n = 4
+  Output: 24
+  Explanation: 4 * 3 * 2 * 1 = 24
+
+Example 3: 
+  Input: n = 5
+  Output: 120
+  Explanation: 5 * 4 * 3 * 2 * 1 = 120
+
+Approach
+  - BC: if n === 1 || n === 0 return 1
+  - Init sum set to 0
+  - sum = Call factorial recursively (n - 1)
+  - sum (6) += 3 * n - 1 = 2
+*/
+function factorial(n) {
+  if(n <= 1) return 1
+  return n * factorial(n - 1)
+}
+let n1 = 3;
+// console.log(factorial(n1));
+/* Time Complexity: O(n)
+   Space Complexity: O(n)
+
+The time complexity of the factorial algorithm implemented using recursion is O(n), where n is the input number for which we are calculating the factorial.
+
+This is because, in the worst case, the function needs to make n-1 recursive calls before it reaches the base case of n = 0 or n = 1. Each recursive call takes O(1) time to execute, so the total time complexity is the number of recursive calls multiplied by the time complexity of each call, which is O(n) in this case.
+
+In terms of space complexity, the factorial algorithm implemented using recursion has a space complexity of O(n) as well, since each recursive call requires a new activation record to be pushed onto the call stack until the base case is reached. This can result in a large amount of memory usage for large values of n.
+
+*/
+// SWIFT APPROAH
+// func factorial(_n: Int) -> Int {
+//let n = 1
+
+// if  n <=1 {
+// return 1
+//}
+// return n * factorial (n-1)
+// print(n)
+//}
+
+// func factorial(_ n: Int) -> Int {
+//     if n == 0 {
+//         return 1
+//     } else {
+//         return n * factorial(n - 1)
+//     }
+// }
+
+
+/*
+2. Fibonacci - a sequence such that each number is the sum of the two numbers preceding it. 
+
+The Fibonacci sequence goes as follows:
+1, 1, 2, 3, 5, 8, 13, 21, ... and so on
+
+At the 0 index, we assign value of 1.
+At the 1 index, we assign value of 1.
+At the 2 index, 2 is the sum of 1 and 1, so the Fibonacci number of 2 is 2.
+At the 3 index, 3 is the sum of 2 and 1, so the Fibonacci number of 3 is 3.
+At the 4 index, 5 is the sum of 3 and 2, so the Fibonacci number of 4 is 5.
+At the 5 index, 8 is the sum of 5 and 3, so the Fibonacci number of 5 is 8.
+At the 6 index, 13 is the sum of 8 and 5, so the Fibonacci number of 6 is 13.
+At the 7 index, 21 is the sum of 13 and 8, so the Fibonacci number of 7 is 21.
+
+Given an integer, n, write a function that produces it's Fibonacci number.
+
+Example 1:
+  Input: n = 5
+  Output: 8
+  
+Example 2:
+  Input: n = 6
+  Output: 24
+
+Example 3: 
+  Input: n = 15
+  Output: 610
+
+Approach
+  - BC: if n === 1 || 0 then return 1
+  - return fib(n - 1) + fib(n - 2)
+*/
+function fib(n) {
+  if(n <= 1) return 1
+  return fib(n - 1) + fib(n - 2)
+}
+let n2 = 5;
+console.log(fib(n2));
+/* Time Complexity: O(2^n) -> every recursive call leads to two additional calls
+   Space Complexity: O(n) -> callstack holds space regardless
+*/
+
+
