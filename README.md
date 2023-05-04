@@ -518,3 +518,34 @@ console.log(fib(n2));
 */
 
 
+
+
+
+//  implementing a Node abstract data structure
+
+//class ListNode<T> {
+//     var value: T
+//     var next: ListNode<T>?
+// Singly linked list
+  //var previous: Node? // Doubly linked list
+  
+    
+//     init(_ value: T, _ next: ListNode<T>? = nil) {
+//         self.value = value
+//         self.next = next
+//     }
+// }
+
+// func reverseLinkedList<T>(_ head: ListNode<T>?) -> ListNode<T>? {
+//     var prevNode: ListNode<T>? = nil
+//     var currNode = head
+    
+//     while currNode != nil {
+//         let nextNode = currNode?.next
+//         currNode?.next = prevNode
+//         prevNode = currNode
+//         currNode = nextNode
+//     }
+    
+//     return prevNode
+// }
