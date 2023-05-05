@@ -549,3 +549,66 @@ console.log(fib(n2));
     
 //     return prevNode
 // }
+
+// Sliding window
+
+Given two strings s and t of lengths m and n respectively, return the minimum window 
+substring
+ of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
+
+The testcases will be generated such that the answer is unique.
+
+class Solution {
+    func minWindow(_ s: String, _ t: String) -> String {
+        var sArray: [Character] = Array(s)
+        var tArray: [Character] = Array(t) 
+        var wordDictionary: [Character: Int] = [:]
+
+        for char in t {
+            if let value = wordDictionary[char] {
+                wordDictionary[char] = value + 1
+            } else {
+                wordDictionary[char] = 1
+            }
+        }
+
+        var startIndex: Int = 0
+        var endIndex: Int = 0
+        var sCount: Int = s.count
+        var minLength: Int = Int.max 
+        var filled: Int = t.count
+        var start: Int = 0
+
+        while (endIndex < sCount) {
+            let head: Character = sArray[endIndex]
+            if let value = wordDictionary[head] {
+                wordDictionary[head] = value - 1
+                if value > 0 {
+                    filled -= 1
+                }
+            }
+            
+            while filled == 0 {
+                let tail: Character = sArray[startIndex]
+
+                if minLength > endIndex - startIndex + 1 {
+                    minLength = endIndex - startIndex + 1
+                    start = startIndex
+                }
+
+                if let value = wordDictionary[tail] {
+                    wordDictionary[tail] = value + 1
+
+                    if value == 0 {
+                        filled += 1
+                    }
+                }
+                startIndex += 1
+            }
+            endIndex += 1
+        }
+
+        return minLength == Int.max ? "" : String(sArray[start ..< start + minLength])
+    }
+}
+
