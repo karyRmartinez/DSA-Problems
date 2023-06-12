@@ -611,4 +611,15 @@ class Solution {
         return minLength == Int.max ? "" : String(sArray[start ..< start + minLength])
     }
 }
-
+// Interger replacement
+func integerReplacement(_ n: Int) -> Int {
+    if n == 1 {
+        return 0
+    } else if n % 2 == 0 {
+        return 1 + integerReplacement(n / 2)
+    } else {
+        let a = 1 + integerReplacement(n - 1)
+        let b = 1 + integerReplacement(n + 1)
+        return min(a, b)
+    }
+}
